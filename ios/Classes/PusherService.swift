@@ -73,25 +73,23 @@ class PusherService: MChannel {
             
             Utils.enableLogging = pusherArgs.initArgs.enableLogging
             
-            if(_pusherInstance == nil) {
-                let pusherOptions = PusherClientOptions(
-                    authMethod: pusherArgs.pusherOptions.auth == nil ? .noMethod : AuthMethod.authRequestBuilder(authRequestBuilder: AuthRequestBuilder(pusherAuth: pusherArgs.pusherOptions.auth!)),
-                    host: pusherArgs.pusherOptions.cluster != nil ? .cluster(pusherArgs.pusherOptions.cluster!) : .host(pusherArgs.pusherOptions.host),
-                    port: pusherArgs.pusherOptions.encrypted ? pusherArgs.pusherOptions.wssPort : pusherArgs.pusherOptions.wsPort,
-                    useTLS: pusherArgs.pusherOptions.encrypted,
-                    activityTimeout: Double(pusherArgs.pusherOptions.activityTimeout) / 1000
-                    
-                )
+            let pusherOptions = PusherClientOptions(
+                authMethod: pusherArgs.pusherOptions.auth == nil ? .noMethod : AuthMethod.authRequestBuilder(authRequestBuilder: AuthRequestBuilder(pusherAuth: pusherArgs.pusherOptions.auth!)),
+                host: pusherArgs.pusherOptions.cluster != nil ? .cluster(pusherArgs.pusherOptions.cluster!) : .host(pusherArgs.pusherOptions.host),
+                port: pusherArgs.pusherOptions.encrypted ? pusherArgs.pusherOptions.wssPort : pusherArgs.pusherOptions.wsPort,
+                useTLS: pusherArgs.pusherOptions.encrypted,
+                activityTimeout: Double(pusherArgs.pusherOptions.activityTimeout) / 1000
                 
-                _pusherInstance = Pusher(key: pusherArgs.appKey, options: pusherOptions)
-                _pusherInstance.connection.reconnectAttemptsMax = pusherArgs.pusherOptions.maxReconnectionAttempts
-                _pusherInstance.connection.maxReconnectGapInSeconds = Double(pusherArgs.pusherOptions.maxReconnectGapInSeconds)
-                _pusherInstance.connection.pongResponseTimeoutInterval = Double(pusherArgs.pusherOptions.pongTimeout) / 1000
-                _pusherInstance.connection.delegate = ConnectionListener.default
-                Utils.debugLog(msg: "Pusher initialized")
-                
-                result(nil)
-            }
+            )
+            
+            _pusherInstance = Pusher(key: pusherArgs.appKey, options: pusherOptions)
+            _pusherInstance.connection.reconnectAttemptsMax = pusherArgs.pusherOptions.maxReconnectionAttempts
+            _pusherInstance.connection.maxReconnectGapInSeconds = Double(pusherArgs.pusherOptions.maxReconnectGapInSeconds)
+            _pusherInstance.connection.pongResponseTimeoutInterval = Double(pusherArgs.pusherOptions.pongTimeout) / 1000
+            _pusherInstance.connection.delegate = ConnectionListener.default
+            Utils.debugLog(msg: "Pusher initialized")
+            
+            result(nil)
         } catch let err {
             Utils.errorLog(msg: err.localizedDescription)
             result(FlutterError(code: "INIT_ERROR", message: err.localizedDescription, details: err))
