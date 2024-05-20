@@ -1,7 +1,7 @@
-package com.github.chinloyal.pusher_client
+package com.github.chinloyal.pusher_client_token_fixed
 
 import androidx.annotation.NonNull
-import com.github.chinloyal.pusher_client.pusher.PusherService
+import com.github.chinloyal.pusher_client_token_fixed.pusher.PusherService
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall

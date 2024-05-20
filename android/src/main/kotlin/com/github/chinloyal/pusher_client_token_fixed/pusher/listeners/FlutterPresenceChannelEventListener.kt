@@ -1,7 +1,7 @@
-package com.github.chinloyal.pusher_client.pusher.listeners
+package com.github.chinloyal.pusher_client_token_fixed.pusher.listeners
 
-import com.github.chinloyal.pusher_client.core.utils.Constants
-import com.github.chinloyal.pusher_client.pusher.PusherService
+import com.github.chinloyal.pusher_client_token_fixed.core.utils.Constants
+import com.github.chinloyal.pusher_client_token_fixed.pusher.PusherService
 import com.pusher.client.channel.PresenceChannelEventListener
 import com.pusher.client.channel.PusherEvent
 import com.pusher.client.channel.User

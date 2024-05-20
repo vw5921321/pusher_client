@@ -1,9 +1,9 @@
-package com.github.chinloyal.pusher_client.pusher
+package com.github.chinloyal.pusher_client_token_fixed.pusher
 
 import android.util.Log
-import com.github.chinloyal.pusher_client.core.contracts.MChannel
-import com.github.chinloyal.pusher_client.core.utils.JsonEncodedConnectionFactory
-import com.github.chinloyal.pusher_client.pusher.listeners.*
+import com.github.chinloyal.pusher_client_token_fixed.core.contracts.MChannel
+import com.github.chinloyal.pusher_client_token_fixed.core.utils.JsonEncodedConnectionFactory
+import com.github.chinloyal.pusher_client_token_fixed.pusher.listeners.*
 import com.google.gson.Gson
 import com.pusher.client.Pusher
 import com.pusher.client.PusherOptions
@@ -20,8 +20,8 @@ import org.json.JSONObject
 import java.lang.Exception
 
 
-const val CHANNEL_NAME = "com.github.chinloyal/pusher_client"
-const val EVENT_STREAM = "com.github.chinloyal/pusher_client_stream"
+const val CHANNEL_NAME = "com.github.chinloyal/pusher_client_token_fixed"
+const val EVENT_STREAM = "com.github.chinloyal/pusher_client_token_fixed_stream"
 const val LOG_TAG = "PusherClientPlugin"
 const val PRIVATE_PREFIX = "private-"
 const val PRIVATE_ENCRYPTED_PREFIX = "private-encrypted-"

@@ -1,4 +1,4 @@
-name: Publish pusher_client to pub.dev
+name: Publish pusher_client_token_fixed to pub.dev
 on:
   release:
     types:

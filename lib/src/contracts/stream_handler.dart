@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 abstract class StreamHandler {
-  static const EventChannel _eventStream = const EventChannel('com.github.chinloyal/pusher_client_stream');
+  static const EventChannel _eventStream = const EventChannel('com.github.chinloyal/pusher_client_token_fixed_stream');
   late StreamSubscription _eventStreamSubscription;
 
   static Map<String, dynamic Function(dynamic)> _listeners = {};

@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - pusher_client (1.0.0):
+  - pusher_client_token_fixed (1.0.0):
     - Flutter
     - PusherSwiftWithEncryption (~> 8.0.0)
   - PusherSwiftWithEncryption (8.0.0):
@@ -13,7 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - pusher_client (from `.symlinks/plugins/pusher_client/ios`)
+  - pusher_client_token_fixed (from `.symlinks/plugins/pusher_client_token_fixed/ios`)
 
 SPEC REPOS:
   trunk:
@@ -25,12 +25,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  pusher_client:
-    :path: ".symlinks/plugins/pusher_client/ios"
+  pusher_client_token_fixed:
+    :path: ".symlinks/plugins/pusher_client_token_fixed/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  pusher_client: 98d16b50f0ebb4d67d3f61b29723142c03179da9
+  pusher_client_token_fixed: 98d16b50f0ebb4d67d3f61b29723142c03179da9
   PusherSwiftWithEncryption: 8ed9c9cf743b0530aa3a8c60de6734475f1aa67d
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc

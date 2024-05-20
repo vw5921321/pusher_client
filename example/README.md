@@ -1,6 +1,6 @@
-# pusher_client_example
+# pusher_client_token_fixed_example
 
-Demonstrates how to use the pusher_client plugin.
+Demonstrates how to use the pusher_client_token_fixed plugin.
 
 ## Getting Started
 

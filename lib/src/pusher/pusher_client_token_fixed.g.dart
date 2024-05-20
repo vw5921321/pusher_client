@@ -1,6 +1,6 @@
 // YOU SHOULD MODIFY BY HAND
 
-part of 'pusher_client.dart';
+part of 'pusher_client_token_fixed.dart';
 
 // InitArgs _$InitArgsFromJson(Map<String, dynamic> json) {
 //   return InitArgs(

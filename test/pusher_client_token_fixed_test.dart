@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pusher_client/pusher_client.dart';
+import 'package:pusher_client_token_fixed/pusher_client_token_fixed.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MethodChannel channel =
-      const MethodChannel('com.github.chinloyal/pusher_client');
+      const MethodChannel('com.github.chinloyal/pusher_client_token_fixed');
   group('PusherClient Test | ', () {
     setUp(() {
       channel.setMockMethodCallHandler((call) {

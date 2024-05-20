@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "pusher_client",
+            "name": "pusher_client_token_fixed",
             "request": "launch",
             "type": "dart"
         },

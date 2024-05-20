@@ -1,7 +1,7 @@
 # Pusher Channels Flutter Client
 
-[![pub version](https://img.shields.io/pub/v/pusher_client.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client)
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/chinloyal/pusher_client/master/LICENSE)
+[![pub version](https://img.shields.io/pub/v/pusher_client_token_fixed.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client_token_fixed)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/chinloyal/pusher_client_token_fixed/master/LICENSE)
 ![Languages](https://img.shields.io/badge/languages-dart%20%7C%20kotlin%20%7C%20swift-blueviolet.svg)
 [![Twitter](https://img.shields.io/badge/twitter-@chinloyal-blue.svg?style=flat&logo=twitter)](https://twitter.com/chinloyal)
 
@@ -45,7 +45,7 @@ Add to your pubspec.yaml
 
 ```yaml
 dependencies:
-    pusher_client: ^2.0.0
+    pusher_client_token_fixed: ^2.0.0
 ```
 
 ## Configuration
@@ -108,7 +108,7 @@ buildTypes {
 Then in `android/app/proguard-rules.pro`:
 
 ```pro
--keep class com.github.chinloyal.pusher_client.** { *; }
+-keep class com.github.chinloyal.pusher_client_token_fixed.** { *; }
 ```
 
 

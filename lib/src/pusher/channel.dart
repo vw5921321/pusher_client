@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:pusher_client/src/contracts/stream_handler.dart';
-import 'package:pusher_client/src/models/event_stream_result.dart';
-import 'package:pusher_client/src/pusher/pusher_event.dart';
+import 'package:pusher_client_token_fixed/src/contracts/stream_handler.dart';
+import 'package:pusher_client_token_fixed/src/models/event_stream_result.dart';
+import 'package:pusher_client_token_fixed/src/pusher/pusher_event.dart';
 
 class Channel extends StreamHandler {
   static const MethodChannel _mChannel =
-      const MethodChannel('com.github.chinloyal/pusher_client');
+      const MethodChannel('com.github.chinloyal/pusher_client_token_fixed');
   static const classId = 'Channel';
 
   static Map<String, void Function(PusherEvent?)> _eventCallbacks =

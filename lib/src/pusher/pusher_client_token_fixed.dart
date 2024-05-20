@@ -2,14 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:pusher_client/pusher_client.dart';
-import 'package:pusher_client/src/contracts/stream_handler.dart';
-import 'package:pusher_client/src/models/connection_error.dart';
-import 'package:pusher_client/src/models/connection_state_change.dart';
-import 'package:pusher_client/src/models/event_stream_result.dart';
-import 'package:pusher_client/src/pusher/channel.dart';
+import 'package:pusher_client_token_fixed/pusher_client_token_fixed.dart';
+import 'package:pusher_client_token_fixed/src/contracts/stream_handler.dart';
+import 'package:pusher_client_token_fixed/src/models/connection_error.dart';
+import 'package:pusher_client_token_fixed/src/models/connection_state_change.dart';
+import 'package:pusher_client_token_fixed/src/models/event_stream_result.dart';
+import 'package:pusher_client_token_fixed/src/pusher/channel.dart';
 
-part 'pusher_client.g.dart';
+part 'pusher_client_token_fixed.g.dart';
 
 /// This class is the main entry point for accessing Pusher.
 /// By creating a new [PusherClient] instance a connection is
@@ -18,42 +18,55 @@ part 'pusher_client.g.dart';
 /// `connect()` at a later point.
 class PusherClient extends StreamHandler {
   static const MethodChannel _channel =
-      const MethodChannel('com.github.chinloyal/pusher_client');
+      const MethodChannel('com.github.chinloyal/pusher_client_token_fixed');
   static const classId = 'PusherClient';
 
-  static PusherClient? _singleton;
+  //static PusherClient? _singleton;
   void Function(ConnectionStateChange?)? _onConnectionStateChange;
   void Function(ConnectionError?)? _onConnectionError;
   String? _socketId;
 
-  PusherClient._(
-    String appKey,
-    PusherOptions options, {
-    bool enableLogging = true,
-    bool autoConnect = true,
-  });
+  // PusherClient._(
+  //   String appKey,
+  //   PusherOptions options, {
+  //   bool enableLogging = true,
+  //   bool autoConnect = true,
+  // });
 
   /// Creates a [PusherClient] -- returns the instance if it's already be called.
-  factory PusherClient(
-    String appKey,
-    PusherOptions options, {
-    bool enableLogging = true,
-    bool autoConnect = true,
-  }) {
-    _singleton ??= PusherClient._(
-      appKey,
-      options,
-      enableLogging: enableLogging,
-      autoConnect: autoConnect,
-    );
+  // factory PusherClient(
+  //   String appKey,
+  //   PusherOptions options, {
+  //   bool enableLogging = true,
+  //   bool autoConnect = true,
+  // }) {
+  //   // _singleton ??= PusherClient._(
+  //   //   appKey,
+  //   //   options,
+  //   //   enableLogging: enableLogging,
+  //   //   autoConnect: autoConnect,
+  //   // );
+  //
+  //   final initArgs = InitArgs(enableLogging: enableLogging);
+  //
+  //   _singleton!._init(appKey, options, initArgs);
+  //
+  //   if (autoConnect) _singleton!.connect();
+  //
+  //   return _singleton!;
+  // }
 
+  PusherClient(
+      String appKey,
+      PusherOptions options, {
+        bool enableLogging = true,
+        bool autoConnect = true,
+      }) {
+    // Create a new instance directly inside the constructor
     final initArgs = InitArgs(enableLogging: enableLogging);
+    _init(appKey, options, initArgs);
 
-    _singleton!._init(appKey, options, initArgs);
-
-    if (autoConnect) _singleton!.connect();
-
-    return _singleton!;
+    if (autoConnect) connect();
   }
 
   Future _init(String appKey, PusherOptions options, InitArgs initArgs) async {

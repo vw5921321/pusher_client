@@ -1,6 +1,6 @@
 //
 //  Models.swift
-//  pusher_client
+//  pusher_client_token_fixed
 //
 //  Created by Romario Chinloy on 10/27/20.
 //

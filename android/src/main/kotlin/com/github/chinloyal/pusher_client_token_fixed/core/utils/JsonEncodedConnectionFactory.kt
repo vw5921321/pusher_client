@@ -1,4 +1,4 @@
-package com.github.chinloyal.pusher_client.core.utils
+package com.github.chinloyal.pusher_client_token_fixed.core.utils
 
 import com.pusher.client.util.ConnectionFactory
 import org.json.JSONObject

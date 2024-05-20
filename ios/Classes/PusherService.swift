@@ -1,6 +1,6 @@
 //
 //  PusherService.swift
-//  pusher_client
+//  pusher_client_token_fixed
 //
 //  Created by Romario Chinloy on 10/26/20.
 //
@@ -9,8 +9,8 @@ import Flutter
 import PusherSwiftWithEncryption
 
 class PusherService: MChannel {
-    static let CHANNEL_NAME = "com.github.chinloyal/pusher_client"
-    static let EVENT_STREAM = "com.github.chinloyal/pusher_client_stream"
+    static let CHANNEL_NAME = "com.github.chinloyal/pusher_client_token_fixed"
+    static let EVENT_STREAM = "com.github.chinloyal/pusher_client_token_fixed_stream"
     static let LOG_TAG = "PusherClientPlugin"
     static let PRIVATE_PREFIX = "private-"
     static let PRIVATE_ENCRYPTED_PREFIX = "private-encrypted-"
